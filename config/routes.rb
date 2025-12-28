@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get "home/index"
+  root to: "home#index"
   resource :session, only: [ :new, :create, :destroy ]
   resource :registration, only: %i[new create]
   resources :passwords, param: :token, only: [ :new, :create, :edit, :update ]
